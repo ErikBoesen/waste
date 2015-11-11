@@ -1,0 +1,31 @@
+article {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-left: 8em;
+}
+article img {
+    width: 100%;
+}
+h3 {
+    font-size: 8em;
+    line-height: 0;
+    color: #333;
+    text-align: center;
+    transform: rotate(-90deg);
+    position: fixed;
+    left: -.5em;
+    top: 50%;
+    font-weight: 100;
+}
+.column-group {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+.column {
+    width: 25vw;
+    margin: 10px;
+    text-align: justify;
+    color: #333;
+}
