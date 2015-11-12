@@ -1,0 +1,17 @@
+h2:last-child {
+    margin-top: 50px;
+    font-size: 2em;
+}
+h2:last-child a {
+    border: none;
+    text-decoration: none;
+    padding: 20px 20px 15px;
+    transition: .3s;
+    border: solid 3px transparent;
+    background: rgba(255,255,255,0.1);
+}
+h2:last-child a:hover {
+    border-color: white;
+    background: 0;
+    transition: .3s;
+}
