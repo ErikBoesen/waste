@@ -6,12 +6,11 @@ h2:last-child a {
     border: none;
     text-decoration: none;
     padding: 20px 20px 15px;
+    border: solid 3px white;
     transition: .3s;
-    border: solid 3px transparent;
-    background: rgba(255,255,255,0.1);
 }
 h2:last-child a:hover {
-    border-color: white;
-    background: 0;
+    background: rgba(255,255,255,0.1);
+    border-color: rgba(255,255,255,0.5);
     transition: .3s;
 }

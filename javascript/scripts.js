@@ -1,13 +1,11 @@
 var menu = function() {
     var isMenuOpen = false;
     $('.menu-button').click(function() {
+        $(this).toggleClass('open', 200);
         if (isMenuOpen === false) {
             $('nav').stop();
             $('nav').animate({
                 left: '6vw'
-            }, 200);
-            $('.menu-button').animate({
-                transform: 'rotate(90deg)'
             }, 200);
             $('.menu-cover').animate({
                 bottom: '0'
@@ -19,9 +17,6 @@ var menu = function() {
             $('nav').stop();
             $('nav').animate({
                 left: '100vw'
-            }, 200);
-            $('.menu-button').animate({
-                left: '15px'
             }, 200);
             $('.menu-cover').animate({
                 bottom: '100vh'

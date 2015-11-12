@@ -56,38 +56,46 @@ article {
     padding: 50px;
 }
 .menu-button {
-    position: fixed;
-    top: 20px;
-    z-index: 1000;
-    cursor: pointer;
     width: 50px;
-    height: 30px;
-    left: 15px;
-    -webkit-touch-callout: none;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
-}
-.menu-bar {
-    width: 100%;
-    height: 1px;
-    background-color: #fff;
-    border-radius: 8px;
-}
-.menu-bar:after,
-.menu-bar:before {
-    content: '';
-    width: 100%;
-    height: 1px;
+    height: 45px;
     position: absolute;
-    background-color: #fff;
-}
-.menu-bar:after {
     top: 20px;
+    left: 10px;
+    transform: rotate(0deg);
+    transition: .5s ease-in-out;
+    cursor: pointer;
 }
-.menu-bar:before {
-    top: 10px;
+.menu-button span {
+    display: block;
+    position: absolute;
+    height: 2px;
+    width: 100%;
+    background: white;
+    opacity: 1;
+    left: 0;
+    transform: rotate(0deg);
+    transition: .25s ease-in-out;
+}
+.menu-button span:nth-child(1) {
+    top: 0px;
+}
+.menu-button span:nth-child(2) {
+    top: 15px;
+}
+.menu-button span:nth-child(3) {
+    top: 30px;
+}
+.menu-button.open span:nth-child(1) {
+    top: 18px;
+    transform: rotate(135deg);
+}
+.menu-button.open span:nth-child(2) {
+    opacity: 0;
+    left: -60px;
+}
+.menu-button.open span:nth-child(3) {
+    top: 18px;
+    transform: rotate(-135deg);
 }
 .menu-cover {
     width: 6vw;
@@ -134,10 +142,18 @@ nav li:hover a {
     background-color: transparent;
     transition: .5s;
 }
-nav li:nth-child(1) {background-image: url(../images/menu/1.jpg)}
-nav li:nth-child(2) {background-image: url(../images/menu/2.jpg)}
-nav li:nth-child(3) {background-image: url(../images/menu/3.jpg)}
-nav li:nth-child(4) {background-image: url(../images/menu/4.jpg)}
+nav li:nth-child(1) {
+    background-image: url(../images/menu/1.jpg)
+}
+nav li:nth-child(2) {
+    background-image: url(../images/menu/2.jpg)
+}
+nav li:nth-child(3) {
+    background-image: url(../images/menu/3.jpg)
+}
+nav li:nth-child(4) {
+    background-image: url(../images/menu/4.jpg)
+}
 @media (max-width: 900px) {
     nav li {
         margin-right: 0;
