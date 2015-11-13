@@ -13,6 +13,7 @@
 }
 body {
     margin: 0;
+    overflow-x: hidden;
     font-family: 'Open Sans', sans-serif;
     -moz-osx-font-smoothing: grayscale;
     -webkit-font-smoothing: antialiased;
@@ -45,18 +46,19 @@ h4 {
 h1 {
     font-size: 8em;
 }
-h2:last-child {
+button {
+    border: none;
+    background: none;
     margin-top: 50px;
     font-size: 2em;
-}
-h2:last-child a {
-    border: none;
-    text-decoration: none;
+    font-family: 'Besom', 'Open Sans', sans-serif;
+    color: white;
     padding: 20px 20px 15px;
     border: solid 3px white;
     transition: .3s;
+    cursor: pointer;
 }
-h2:last-child a:hover {
+button:hover {
     background: rgba(255, 255, 255, 0.1);
     border-color: rgba(255, 255, 255, 0.5);
     transition: .3s;
@@ -70,55 +72,6 @@ a:hover {
 article {
     background: white;
     padding: 50px;
-}
-.menu-button {
-    width: 50px;
-    height: 45px;
-    position: absolute;
-    top: 20px;
-    left: 15px;
-    transform: rotate(0deg);
-    transition: .5s ease-in-out;
-    cursor: pointer;
-}
-.menu-button span {
-    display: block;
-    position: absolute;
-    height: 2px;
-    width: 100%;
-    background: rgba(255, 255, 255, .8);
-    opacity: 1;
-    left: 0;
-    transform: rotate(0deg);
-    transition: .25s ease-in-out;
-}
-.menu-button span:nth-child(1) {
-    top: 0px;
-}
-.menu-button span:nth-child(2) {
-    top: 15px;
-}
-.menu-button span:nth-child(3) {
-    top: 30px;
-}
-.menu-button.open span:nth-child(1) {
-    top: 18px;
-    transform: rotate(135deg);
-}
-.menu-button.open span:nth-child(2) {
-    opacity: 0;
-    left: -60px;
-}
-.menu-button.open span:nth-child(3) {
-    top: 18px;
-    transform: rotate(-135deg);
-}
-.menu-cover {
-    width: 6vw;
-    height: 100vh;
-    position: fixed;
-    bottom: 100vh;
-    background: #222;
 }
 nav {
     position: fixed;
@@ -169,37 +122,6 @@ nav li:nth-child(3) {
 }
 nav li:nth-child(4) {
     background-image: url(images/menu/4.jpg)
-}
-article {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    padding-left: 8em;
-}
-article img {
-    width: 100%;
-}
-article h3 {
-    font-size: 8em;
-    line-height: 0;
-    color: #333;
-    text-align: center;
-    transform: rotate(-90deg);
-    position: fixed;
-    left: -.5em;
-    top: 50%;
-    font-weight: 100;
-}
-.column-group {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-}
-.column {
-    width: 25vw;
-    margin: 10px;
-    text-align: justify;
-    color: #333;
 }
 @media (max-width: 900px) {
     nav li {
