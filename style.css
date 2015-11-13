@@ -22,7 +22,7 @@ body {
     height: 100vh;
     width: 100vw;
     z-index: -1000;
-    background-image: url('../images/bg.jpg');
+    background-image: url('images/bg.jpg');
     background-size: cover;
 }
 header {
@@ -45,6 +45,22 @@ h4 {
 h1 {
     font-size: 8em;
 }
+h2:last-child {
+    margin-top: 50px;
+    font-size: 2em;
+}
+h2:last-child a {
+    border: none;
+    text-decoration: none;
+    padding: 20px 20px 15px;
+    border: solid 3px white;
+    transition: .3s;
+}
+h2:last-child a:hover {
+    background: rgba(255, 255, 255, 0.1);
+    border-color: rgba(255, 255, 255, 0.5);
+    transition: .3s;
+}
 a {
     color: inherit;
 }
@@ -60,7 +76,7 @@ article {
     height: 45px;
     position: absolute;
     top: 20px;
-    left: 10px;
+    left: 15px;
     transform: rotate(0deg);
     transition: .5s ease-in-out;
     cursor: pointer;
@@ -70,7 +86,7 @@ article {
     position: absolute;
     height: 2px;
     width: 100%;
-    background: white;
+    background: rgba(255, 255, 255, .8);
     opacity: 1;
     left: 0;
     transform: rotate(0deg);
@@ -143,16 +159,47 @@ nav li:hover a {
     transition: .5s;
 }
 nav li:nth-child(1) {
-    background-image: url(../images/menu/1.jpg)
+    background-image: url(images/menu/1.jpg)
 }
 nav li:nth-child(2) {
-    background-image: url(../images/menu/2.jpg)
+    background-image: url(images/menu/2.jpg)
 }
 nav li:nth-child(3) {
-    background-image: url(../images/menu/3.jpg)
+    background-image: url(images/menu/3.jpg)
 }
 nav li:nth-child(4) {
-    background-image: url(../images/menu/4.jpg)
+    background-image: url(images/menu/4.jpg)
+}
+article {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-left: 8em;
+}
+article img {
+    width: 100%;
+}
+article h3 {
+    font-size: 8em;
+    line-height: 0;
+    color: #333;
+    text-align: center;
+    transform: rotate(-90deg);
+    position: fixed;
+    left: -.5em;
+    top: 50%;
+    font-weight: 100;
+}
+.column-group {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+.column {
+    width: 25vw;
+    margin: 10px;
+    text-align: justify;
+    color: #333;
 }
 @media (max-width: 900px) {
     nav li {

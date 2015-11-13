@@ -28,3 +28,9 @@ var menu = function() {
 };
 
 addEventListener('load', menu);
+
+$(document).ready(function() {
+    $('h2:last-child').click(function() {
+        $(window).scrollTop();
+    });
+});
