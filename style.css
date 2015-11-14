@@ -86,4 +86,6 @@ strong {
     text-align: justify;
     margin: 0 1%;
 }
-article
+iframe {
+    border: 0;
+}
