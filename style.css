@@ -2,19 +2,19 @@
     font-family: 'Besom';
     font-weight: bold;
     src: url(font/Besom.ttf) format('truetype');
-    unicode-range: U+0000-00FF;
+    unicode-range: U+0020−007F;
 }
 @font-face {
-    font-family: 'Open Sans';
-    font-style: normal;
-    font-weight: 400;
-    src: local('Open Sans'), local('OpenSans'), url(http://fonts.gstatic.com/s/opensans/v13/cJZKeOuBrn4kERxqtaUH3VtXRa8TVwTICgirnJhmVJw.woff2) format('woff2');
-    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
+  font-family: 'Raleway';
+  font-style: normal;
+  font-weight: 300;
+  src: local('Raleway Light'), local('Raleway-Light'), url(https://fonts.gstatic.com/s/raleway/v9/-_Ctzj9b56b8RgXW8FAriQzyDMXhdD8sAj6OAJTFsBI.woff2) format('woff2');
+  unicode-range: U+0020−007F;
 }
 body {
     margin: 0;
     overflow-x: hidden;
-    font-family: 'Open Sans', sans-serif;
+    font-family: 'Raleway', sans-serif;
     -moz-osx-font-smoothing: grayscale;
     -webkit-font-smoothing: antialiased;
 }
@@ -41,7 +41,7 @@ h2,
 h3,
 h4 {
     margin: 0;
-    font-family: 'Besom', 'Open Sans', sans-serif;
+    font-family: 'Besom', 'Raleway', sans-serif;
 }
 h1 {
     font-size: 8em;
@@ -51,12 +51,13 @@ button {
     background: none;
     margin-top: 50px;
     font-size: 2em;
-    font-family: 'Besom', 'Open Sans', sans-serif;
+    font-family: 'Besom', 'Raleway', sans-serif;
     color: white;
     padding: 20px 20px 15px;
     border: solid 3px white;
     transition: .3s;
     cursor: pointer;
+    outline: none;
 }
 button:hover {
     background: rgba(255, 255, 255, 0.1);
@@ -70,68 +71,19 @@ a:hover {
     text-decoration: none;
 }
 article {
-    background: white;
-    padding: 50px;
-}
-nav {
-    position: fixed;
-    padding: 0;
-    margin: 0;
-    left: 100vw;
-    z-index: 100;
-}
-nav ul {
-    height: 100vh;
-    width: 94vw;
-    padding: 0;
-    list-style-type: none;
-    margin: 0;
-}
-nav li {
-    margin-right: -4px;
-    display: inline-block;
-    background-size: cover;
-    background-color: #111;
-}
-nav a {
-    display: inline-flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    height: 50vh;
-    width: 47vw;
+    background: black;
     color: white;
-    text-decoration: none;
-    font-family: 'Besom', 'Open Sans', sans-serif;
-    font-size: 3em;
-    background-color: rgba(0, 0, 0, .5);
-    transition: .5s;
+    padding: 50px;
+    font-size: 1.3em;
 }
-nav li:hover a {
-    background-color: transparent;
-    transition: .5s;
+strong {
+    color: hsl(200, 50%, 48%);
 }
-nav li:nth-child(1) {
-    background-image: url(images/menu/1.jpg)
+.column-3 {
+    width: 30%;
+    display: inline-block;
+    vertical-align: top;
+    text-align: justify;
+    margin: 0 1%;
 }
-nav li:nth-child(2) {
-    background-image: url(images/menu/2.jpg)
-}
-nav li:nth-child(3) {
-    background-image: url(images/menu/3.jpg)
-}
-nav li:nth-child(4) {
-    background-image: url(images/menu/4.jpg)
-}
-@media (max-width: 900px) {
-    nav li {
-        margin-right: 0;
-        display: block;
-    }
-    nav a {
-        display: block;
-        height: 25vh;
-        width: 100vw;
-        font-size: 5em;
-    }
-}
+article
