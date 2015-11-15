@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="author" content="Erik Boesen">
     <meta name="description" content="Some information about an island country in the Indian Ocean.">
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="style.css">
 </head>
 
@@ -29,12 +30,22 @@
             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
         </div>
     </article>
+    <div class="bg2"></div>
     <article>
-        <h1>How to help</h1>
-        <p>Take the #WastePledge! Promise to buy used electronics whenever possible, and properly recycle any tech that can't be reused!</p>
-        <a class="twitter-timeline" href="https://twitter.com/hashtag/WastePledge" data-widget-id="665637644945252356">#WastePledge Tweets</a>
-        <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
-        <iframe width="600" height="450" src="https://www.google.com/maps/embed/v1/search?q=recycling%20centre&key=AIzaSyCLZ6C9HILc_nZbxPnSIi-b4HDJmnZtYYg" allowfullscreen></iframe>
+        <h2>How to help</h2>
+        <p>Take the #WastePledge and promise to buy used electronics whenever possible, and properly recycle any tech that can't be reused!</p>
+        <div class="twitter">
+            <div class="pledge-button">
+                <i class="fa fa-twitter"></i>
+                <a href="https://twitter.com/intent/tweet?text=I'm+taking+the+%23WastePledge+to+help+save+the+planet+by+conserving+electronics!+You+can+take+it+too+at+waste.io!">Pledge Now!</a>
+            </div>
+            <div id="tweets"></div>
+        </div>
+
+        <div class="map">
+            <p>Use this map to find an electronics recycling center near you!</p>
+            <iframe width="600" height="450" src="https://www.google.com/maps/embed/v1/search?q=recycling%20centre&key=AIzaSyCLZ6C9HILc_nZbxPnSIi-b4HDJmnZtYYg" allowfullscreen></iframe>
+        </div>
     </article>
     <script src="jquery.js"></script>
     <script src="scripts.js"></script>
