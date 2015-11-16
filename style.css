@@ -86,21 +86,20 @@ strong {
     text-align: justify;
     margin: 0 1%;
 }
-.bg2 {
-    height: 50vh;
-    background: url(images/death.jpg);
-    background-attachment: fixed;
-    background-size: cover;
-}
 article:nth-of-type(2) {
     background: white;
     color: #333;
+}
+article h2 {
+    text-align: center;
+    font-size: 3em;
 }
 .twitter {
     margin: 3em;
 }
 .pledge-button {
     font-size: 2em;
+    font-family: 'Besom';
     text-align: center;
 }
 .pledge-button a {
@@ -108,6 +107,11 @@ article:nth-of-type(2) {
     text-align: center;
     border-bottom: solid 1px #aaa;
     padding: -20px;
+    transition: .2s;
+}
+.pledge-button a:hover {
+    border-bottom-color: black;
+    transition: .2s;
 }
 #tweets:after {
     content: "";
@@ -145,6 +149,10 @@ article:nth-of-type(2) {
 }
 #tweets .user a span[data-scribe="element:name"] {
     font-size: 1em;
+}
+#tweets .user a span[data-scribe="element:verified_badge"] {
+    display: none;
+    height: -10px;
 }
 #tweets .user a span[data-scribe="element:screen_name"] {
     font-size: .9em;
@@ -185,9 +193,12 @@ hr {
     border: 0;
     height: 1px;
 }
+.map h3 {
+    font-size: 2em;
+}
 .map {
-
 }
 iframe {
     border: 0;
+    margin: auto;
 }
