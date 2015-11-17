@@ -3,6 +3,35 @@ $(window).scroll(function () {
 	$('.bg').css({
 		'transform': 'translate(0,-' + wScroll * 0.5 + 'px)'
 	});
+	$('section:nth-of-type(2)').css({
+		'background-position': '0% ' + (0.5 * (wScroll - window.innerHeight * 2)) + '%'
+	});
+});
+
+$(document).ready(function() {
+	$('.scroll div').on('click', function() {
+		function scrollDown(currentSection) {
+			$('html, body').animate({
+				scrollTop: window.innerHeight * (currentSection + 1)
+			}, 600);
+		}
+		scrollDown(Math.floor(($(window).scrollTop() / window.innerHeight)));
+		/*if ($(window).scrollTop() <= 0) {
+			$('html, body').animate({
+				scrollTop: window.innerHeight
+			}, 600);
+		}
+		else if ($(window).scrollTop() <= window.innerHeight * 2) {
+			$('html, body').animate({
+				scrollTop: (window.innerHeight * 2)
+			}, 800);
+		}
+		else if ($(window).scrollTop() <= window.innerHeight * 3) {
+			$('html, body').animate({
+				scrollTop: (window.innerHeight * 3)
+			}, 800);
+		}*/
+	});
 });
 
 /*********************************************************************
@@ -25,7 +54,7 @@ n.push(c[e].getAttribute("data-tweet-id")),f.push(m(c[e],"p-author")[0]),g.push(
 n[b]+'" class="twitter_fav_icon">Favorite</a></p>');B&&void 0!==h[b]&&(l=h[b],void 0!==l?(l=l.innerHTML.match(/data-srcset="([A-z0-9%_\.-]+)/i)[0],l=decodeURIComponent(l).split('"')[1]):l=void 0,d+='<div class="media"><img src="'+l+'" alt="Image from tweet" /></div>');c.push(d);b++}if(null===v){a=c.length;f=0;g=document.getElementById(x);for(h="<ul>";f<a;)h+="<li>"+c[f]+"</li>",f++;g.innerHTML=h+"</ul>"}else v(c);s=!1;0<p.length&&(twitterFetcher.fetch(p[0]),p.splice(0,1))}}}();
 
 var config1 = {
-	"id": '546056869761257473',
+	"id": '666459150994571264',
 	"domId": 'tweets',
 	"maxTweets": 3,
 	"enableLinks": true,

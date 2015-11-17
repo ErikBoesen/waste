@@ -1,14 +1,14 @@
 @font-face {
     font-family: 'Besom';
     font-weight: bold;
-    src: url(font/Besom.ttf) format('truetype');
+    src: local('Besom'), url(font/Besom.woff2) format('woff2'), url(font/Besom.ttf) format('truetype');
     unicode-range: U+0020−007F;
 }
 @font-face {
     font-family: 'Raleway';
     font-style: normal;
     font-weight: 300;
-    src: local('Raleway Light'), local('Raleway-Light'), url(https://fonts.gstatic.com/s/raleway/v9/-_Ctzj9b56b8RgXW8FAriQzyDMXhdD8sAj6OAJTFsBI.woff2) format('woff2');
+    src: local('Raleway Light'), local('Raleway-Light'), url(font/Raleway.woff2) format('woff2'), url(font/Raleway.ttf) format('truetype');
     unicode-range: U+0020−007F;
 }
 * {
@@ -29,20 +29,38 @@ body {
     background-image: url('images/bg.jpg');
     background-size: cover;
 }
-header {
+header,
+section {
     height: 100vh;
     width: 100vw;
-    background-color: rgba(0, 0, 0, .3);
     color: white;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
     display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
     flex-direction: column;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+    -ms-flex-pack: center;
     justify-content: center;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
     align-items: center;
+}
+header {
+    background-color: transparent;
+    background-color: rgba(0, 0, 0, .3);
 }
 h1,
 h2,
 h3,
-h4 {
+h4,
+.big-number {
     margin: 0;
     font-family: 'Besom', 'Raleway', sans-serif;
     text-align: center;
@@ -52,33 +70,42 @@ h1 {
 }
 .scroll {
     width: 100%;
-    position: absolute;
+    position: fixed;
     bottom: 30px;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
     display: flex;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+    -ms-flex-pack: center;
     justify-content: center;
-    align-items: center;
-    flex-direction: column;
+    opacity: .6;
+    filter: alpha(opacity=60);
 }
-.scroll p {
-    margin-bottom: 30px;
-    font-size: 1.2em;
+.scroll div {
+    cursor: pointer;
 }
 .scroll div div {
     height: 40px;
-    width: 3px;
+    width: 5px;
     background: white;
     display: inline-block;
-    border-radius: 5px;
+    -webkit-animation: 1s arrow-blink infinite alternate-reverse;
     animation: 1s arrow-blink infinite alternate-reverse;
 }
 .scroll div div:first-of-type {
+    -webkit-transform: rotate(-45deg);
+    -ms-transform: rotate(-45deg);
     transform: rotate(-45deg);
-    margin-right: 10px;
+    margin-right: 8px;
     box-shadow: 15px -15px white, -15px 15px white;
 }
 .scroll div div:last-of-type {
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
     transform: rotate(45deg);
-    margin-left: 10px;
+    margin-left: 8px;
     box-shadow: -15px -15px white, 15px 15px white;
 }
 a {
@@ -88,30 +115,28 @@ a:hover {
     text-decoration: none;
 }
 section {
-    height: 100vh;
-    color: white;
-    padding: 50px;
-    font-size: 1.2em;
+    font-size: 1.4em;
+    padding: 4em;
 }
-
 section:first-of-type {
-    background: #1C3A45;
+    background: url(images/death.jpg) fixed;
+    background-size: cover;
 }
-section:first-of-type p {
-    font-size: 2em;
-}
-.big-number {
-    font-size: 8em;
-    font-family: 'Besom', 'Ralway', sans-serif;
+section:first-of-type .big-number {
+    font-size: 20vw;
+    margin: -.05em 0 -.2em;
 }
 section:nth-of-type(2) {
-    background: #366b35;
+    background: url(images/wave.jpg) fixed;
+    background-position: bottom;
+    background-size: cover;
 }
-article h2 {
-    font-size: 3em;
+article {
+    padding: 3em;
 }
 .twitter {
     margin: 3em;
+    font-size: 1.2em;
 }
 .pledge-button {
     font-size: 2em;
@@ -122,14 +147,16 @@ article h2 {
     text-decoration: none;
     border-bottom: solid 1px #aaa;
     padding: -20px;
+    -webkit-transition: .2s;
     transition: .2s;
 }
 .pledge-button a:hover {
     border-bottom-color: black;
+    -webkit-transition: .2s;
     transition: .2s;
 }
 #tweets:after {
-    content: "";
+    content: '';
     display: table;
     clear: both;
 }
@@ -141,7 +168,7 @@ article h2 {
 }
 @media (min-width: 48em) {
     #tweets li {
-        width: calc(100% / 3);
+        width: 33.33333%;
         float: left;
     }
 }
@@ -157,53 +184,50 @@ article h2 {
     text-align: left;
     font-weight: bold;
 }
-#tweets .user a img[data-scribe="element:avatar"] {
+#tweets .user a img[data-scribe='element:avatar'] {
     float: left;
     border-radius: 100%;
     margin-right: 6px;
 }
-#tweets .user a span[data-scribe="element:name"] {
-    font-size: 1em;
-}
-#tweets .user a span[data-scribe="element:verified_badge"] {
+#tweets .user a span[data-scribe='element:verified_badge'] {
     display: none;
     height: -10px;
 }
-#tweets .user a span[data-scribe="element:screen_name"] {
-    font-size: .9em;
+#tweets .user a span[data-scribe='element:screen_name'] {
     color: grey;
 }
 #tweets .tweet {
     margin: 0;
     padding: 10px 20px;
 }
-#tweets .tweet a[data-scribe="element:url"] {
+#tweets .tweet a[data-scribe='element:url'] {
     text-decoration: underline;
 }
-#tweets .tweet a[data-scribe="element:hashtag"] {
+#tweets .tweet a[data-scribe='element:hashtag'] {
     color: grey;
     text-decoration: none;
 }
-#tweets .tweet img[aria-label^="Emoji"] {
+#tweets .tweet img[aria-label^='Emoji'] {
     max-height: 1em;
     vertical-align: middle;
 }
 #tweets .timePosted {
     margin: 0;
     padding: 0 20px;
-    font-size: 14px;
+    font-size: .8em;
     text-align: left;
     position: relative;
     bottom: 0;
 }
 #tweets .timePosted:before {
-    font-family: "Fontawesome";
+    font-family: 'Fontawesome';
     -webkit-font-smoothing: antialiased;
-    content: "";
+    content: '';
     padding-right: 4px;
 }
 hr {
     width: 20%;
+    background: -webkit-linear-gradient(left, white, #333, white);
     background: linear-gradient(to right, white, #333, white);
     border: 0;
     height: 1px;
