@@ -69,44 +69,11 @@ h1 {
     font-size: 8em;
 }
 .scroll {
-    width: 100%;
     position: fixed;
-    bottom: 30px;
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-pack: center;
-    -webkit-justify-content: center;
-    -ms-flex-pack: center;
-    justify-content: center;
-    opacity: .6;
-    filter: alpha(opacity=60);
+    bottom: 10px;
 }
-.scroll div {
-    cursor: pointer;
-}
-.scroll div div {
-    height: 40px;
-    width: 5px;
-    background: white;
-    display: inline-block;
-    -webkit-animation: 1s arrow-blink infinite alternate-reverse;
-    animation: 1s arrow-blink infinite alternate-reverse;
-}
-.scroll div div:first-of-type {
-    -webkit-transform: rotate(-45deg);
-    -ms-transform: rotate(-45deg);
-    transform: rotate(-45deg);
-    margin-right: 8px;
-    box-shadow: 15px -15px white, -15px 15px white;
-}
-.scroll div div:last-of-type {
-    -webkit-transform: rotate(45deg);
-    -ms-transform: rotate(45deg);
-    transform: rotate(45deg);
-    margin-left: 8px;
-    box-shadow: -15px -15px white, 15px 15px white;
+.scroll:hover path {
+    fill: grey;
 }
 a {
     color: inherit;

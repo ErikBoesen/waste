@@ -1,36 +1,15 @@
 $(window).scroll(function () {
+	// Parallax backgrounds
 	var wScroll = $(window).scrollTop();
-	$('.bg').css({
-		'transform': 'translate(0,-' + wScroll * 0.5 + 'px)'
-	});
-	$('section:nth-of-type(2)').css({
-		'background-position': '0% ' + (0.5 * (wScroll - window.innerHeight * 2)) + '%'
-	});
+	$('.bg').css('transform', 'translate(0,-' + wScroll * 0.5 + 'px)');
+	$('section:nth-of-type(2)').css('background-position', '0% ' + (0.5 * (wScroll - window.innerHeight * 2)) + '%');
 });
 
 $(document).ready(function() {
-	$('.scroll div').on('click', function() {
-		function scrollDown(currentSection) {
-			$('html, body').animate({
-				scrollTop: window.innerHeight * (currentSection + 1)
-			}, 600);
-		}
-		scrollDown(Math.floor(($(window).scrollTop() / window.innerHeight)));
-		/*if ($(window).scrollTop() <= 0) {
-			$('html, body').animate({
-				scrollTop: window.innerHeight
-			}, 600);
-		}
-		else if ($(window).scrollTop() <= window.innerHeight * 2) {
-			$('html, body').animate({
-				scrollTop: (window.innerHeight * 2)
-			}, 800);
-		}
-		else if ($(window).scrollTop() <= window.innerHeight * 3) {
-			$('html, body').animate({
-				scrollTop: (window.innerHeight * 3)
-			}, 800);
-		}*/
+	$('.scroll').on('click', function() {
+		$('html, body').animate({
+			scrollTop: window.innerHeight * (Math.floor(($(window).scrollTop() / window.innerHeight)) + 1)
+		}, 500);
 	});
 });
 
