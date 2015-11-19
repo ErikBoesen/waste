@@ -71,10 +71,9 @@ h1 {
 .scroll {
     position: fixed;
     bottom: 10px;
-    left: auto;
-    right: auto;
+    left: 48%;
+    opacity: .9;
     cursor: pointer;
-    transition: .3s;
 }
 a {
     color: inherit;
@@ -106,9 +105,14 @@ section:nth-of-type(2) .big-number {
 section:nth-of-type(3) {
     color: #333;
     background: white;
+    height: auto;
+    min-height: 100vh;
+}
+section:nth-of-type(3) h2 {
+    font-size: 3em;
 }
 .twitter {
-    margin: 3em;
+    margin: 3em 2em 1em;
 }
 .pledge-button {
     font-size: 2em;
@@ -172,6 +176,7 @@ section:nth-of-type(3) {
     color: grey;
 }
 #tweets .tweet {
+    overflow: hidden;
     margin: 0;
     padding: 10px 20px;
 }
@@ -208,11 +213,18 @@ hr {
     height: 1px;
 }
 button {
-    border: 2px solid #333;
+    border: 1px solid #333;
     background: 0;
-    font: inherit;
-    padding: 10px 15px;
+    font-family: "Besom", "Raleway", sans-serif;
+    font-size: 1.2em;
+    padding: 10px 15px 8px;
     cursor: pointer;
+    transition: .2s;
+}
+button:hover {
+    background: #333;
+    color: white;
+    transition: .2s;
 }
 .map {
     top: 10%;
