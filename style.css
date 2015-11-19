@@ -71,9 +71,10 @@ h1 {
 .scroll {
     position: fixed;
     bottom: 10px;
-}
-.scroll:hover path {
-    fill: grey;
+    left: auto;
+    right: auto;
+    cursor: pointer;
+    transition: .3s;
 }
 a {
     color: inherit;
@@ -84,6 +85,7 @@ a:hover {
 section {
     font-size: 1.4em;
     padding: 4em;
+    text-align: center;
 }
 section:first-of-type {
     background: url(images/death.jpg) fixed;
@@ -98,12 +100,15 @@ section:nth-of-type(2) {
     background-position: bottom;
     background-size: cover;
 }
-article {
-    padding: 3em;
+section:nth-of-type(2) .big-number {
+    font-size: 15vw;
+}
+section:nth-of-type(3) {
+    color: #333;
+    background: white;
 }
 .twitter {
     margin: 3em;
-    font-size: 1.2em;
 }
 .pledge-button {
     font-size: 2em;
@@ -121,6 +126,9 @@ article {
     border-bottom-color: black;
     -webkit-transition: .2s;
     transition: .2s;
+}
+#tweets {
+    text-align: left;
 }
 #tweets:after {
     content: '';
@@ -199,8 +207,31 @@ hr {
     border: 0;
     height: 1px;
 }
+button {
+    border: 2px solid #333;
+    background: 0;
+    font: inherit;
+    padding: 10px 15px;
+    cursor: pointer;
+}
+.map {
+    top: 10%;
+    bottom: 10%;
+    left: 10%;
+    right: 10%;
+    position: fixed;
+    background: #333;
+    display: none;
+}
 iframe {
     border: 0;
+    bottom: 0;
+    height: 90%;
+    display: block;
     width: 100%;
-    height: 60vh;
+}
+.map-close-button {
+    cursor: pointer;
+    height: 10%;
+    background: 0;
 }

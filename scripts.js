@@ -3,15 +3,25 @@ $(window).scroll(function () {
 	var wScroll = $(window).scrollTop();
 	$('.bg').css('transform', 'translate(0,-' + wScroll * 0.5 + 'px)');
 	$('section:nth-of-type(2)').css('background-position', '0% ' + (0.5 * (wScroll - window.innerHeight * 2)) + '%');
+	$('.scroll').animate({
+		'opacity': '.5'
+	}, 200);
 });
 
-$(document).ready(function() {
-	$('.scroll').on('click', function() {
+$(document).ready(function () {
+	$('.scroll').on('click', function () {
 		$('html, body').animate({
 			scrollTop: window.innerHeight * (Math.floor(($(window).scrollTop() / window.innerHeight)) + 1)
 		}, 500);
 	});
+	$('.map-button').on('click', function () {
+		$('.map').fadeIn();
+	});
+	$('.map-close-button').on('click', function () {
+		$('.map').fadeOut();
+	});
 });
+
 
 /*********************************************************************
 *  #### Twitter Post Fetcher v12.0 ####
