@@ -1,3 +1,9 @@
+$(window).load(function() {
+	$('.preloader').animate({
+		'height': '0'
+	});
+});
+
 $(window).scroll(function () {
 	// Parallax backgrounds
 	var wScroll = $(window).scrollTop();

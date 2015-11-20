@@ -21,6 +21,59 @@ body {
     -moz-osx-font-smoothing: grayscale;
     -webkit-font-smoothing: antialiased;
 }
+.no-js #loader {
+    display: none;
+}
+.js #loader {
+    display: block;
+    position: absolute;
+    left: 100px;
+    top: 0;
+}
+.preloader {
+    position: fixed;
+    left: 0px;
+    top: 0px;
+    width: 100%;
+    height: 100%;
+    z-index: 9999;
+    background: #333;
+    overflow: hidden;
+}
+.globe {
+    border: 2px solid #8bc34a;
+    border-radius: 50%;
+    left: 50%;
+    overflow: hidden;
+    position: absolute;
+    top: 50vh;
+    transform: translate(-50%, -50%);
+    height: 140px;
+    width: 140px;
+}
+.globe svg {
+    animation: rotation 5s linear 0s infinite;
+}
+@-webkit-keyframes rotation {
+    from {
+        -webkit-transform: translateX(0);
+        transform: translateX(0);
+    }
+    from {
+        -webkit-transform: translateX(-50%);
+        transform: translateX(-50%);
+    }
+}
+@keyframes rotation {
+    from {
+        -webkit-transform: translateX(0);
+        transform: translateX(0);
+    }
+    from {
+        -webkit-transform: translateX(-50%);
+        transform: translateX(-50%);
+    }
+}
 .bg {
     position: fixed;
     height: 100vh;
@@ -73,6 +126,7 @@ h1 {
     bottom: 10px;
     left: 48%;
     opacity: .9;
+    filter: alpha(opacity=90);
     cursor: pointer;
 }
 a {
@@ -219,12 +273,14 @@ button {
     font-size: 1.2em;
     padding: 10px 15px 8px;
     cursor: pointer;
-    transition: .2s;
+    -webkit-transition: .2s;
+            transition: .2s;
 }
 button:hover {
     background: #333;
     color: white;
-    transition: .2s;
+    -webkit-transition: .2s;
+            transition: .2s;
 }
 .map {
     top: 10%;
