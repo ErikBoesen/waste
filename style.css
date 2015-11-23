@@ -51,7 +51,7 @@ body {
     height: 140px;
     width: 140px;
 }
-.globe svg {
+.globe img {
     animation: rotation 5s linear 0s infinite;
 }
 @-webkit-keyframes rotation {
