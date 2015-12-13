@@ -21,15 +21,6 @@ body {
     -moz-osx-font-smoothing: grayscale;
     -webkit-font-smoothing: antialiased;
 }
-.no-js #loader {
-    display: none;
-}
-.js #loader {
-    display: block;
-    position: absolute;
-    left: 100px;
-    top: 0;
-}
 .preloader {
     position: fixed;
     left: 0px;
@@ -47,11 +38,14 @@ body {
     overflow: hidden;
     position: absolute;
     top: 50vh;
+    -webkit-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
     height: 140px;
     width: 140px;
 }
 .globe img {
+    -webkit-animation: rotation 5s linear 0s infinite;
     animation: rotation 5s linear 0s infinite;
 }
 @-webkit-keyframes rotation {
@@ -82,8 +76,7 @@ body {
     background-image: url('images/bg.jpg');
     background-size: cover;
 }
-header,
-section {
+header, section {
     min-height: 100vh;
     width: 100vw;
     color: white;
@@ -109,11 +102,7 @@ header {
     background-color: transparent;
     background-color: rgba(0, 0, 0, .3);
 }
-h1,
-h2,
-h3,
-h4,
-.big-number {
+h1, h2, h3, h4, .big-number {
     margin: 0;
     font-family: 'Besom', 'Raleway', sans-serif;
     text-align: center;
@@ -139,6 +128,7 @@ section {
     font-size: 1.4em;
     padding: 4em;
     text-align: center;
+    min-height: 100vh;
 }
 section:first-of-type {
     background: url(images/death.jpg) fixed;
@@ -152,15 +142,17 @@ section:nth-of-type(2) {
     background: url(images/wave.jpg) fixed;
     background-position: bottom;
     background-size: cover;
+    padding: 0 4em;
 }
 section:nth-of-type(2) .big-number {
     font-size: 15vw;
+    line-height: .9;
+    margin: 0;
 }
 section:nth-of-type(3) {
     color: #333;
     background: white;
     height: auto;
-    min-height: 100vh;
 }
 section:nth-of-type(3) h2 {
     font-size: 3em;
@@ -169,18 +161,22 @@ section:nth-of-type(3) h2 {
     margin: 2em 2em 1em;
 }
 .pledge-button {
+    text-decoration: none;
     font-size: 2em;
     font-family: 'Besom', 'Raleway', sans-serif;
     text-align: center;
 }
-.pledge-button a {
+.pledge-button i, .pledge-button p {
+    display: inline;
+}
+.pledge-button p {
     text-decoration: none;
     border-bottom: solid 1px #aaa;
     padding: -20px;
     -webkit-transition: .2s;
     transition: .2s;
 }
-.pledge-button a:hover {
+.pledge-button:hover p {
     border-bottom-color: black;
     -webkit-transition: .2s;
     transition: .2s;
@@ -221,10 +217,14 @@ section:nth-of-type(3) h2 {
     float: left;
     border-radius: 100%;
     margin-right: 6px;
+    height: 60px;
 }
 #tweets .user a span[data-scribe='element:verified_badge'] {
     display: none;
-    height: -10px;
+    margin: -100%;
+}
+#tweets .user a span[data-scribe='element:name'] {
+    margin-top: 4px;
 }
 #tweets .user a span[data-scribe='element:screen_name'] {
     color: grey;
@@ -233,6 +233,7 @@ section:nth-of-type(3) h2 {
     overflow: hidden;
     margin: 0;
     padding: 10px 20px;
+    clear: both;
 }
 #tweets .tweet a[data-scribe='element:url'] {
     text-decoration: underline;
@@ -274,13 +275,17 @@ button {
     padding: 10px 15px 8px;
     cursor: pointer;
     -webkit-transition: .2s;
-            transition: .2s;
+    transition: .2s;
 }
 button:hover {
     background: #333;
     color: white;
     -webkit-transition: .2s;
-            transition: .2s;
+    transition: .2s;
+}
+.map-button {
+    text-decoration: underline;
+    cursor: pointer;
 }
 .map {
     top: 10%;
@@ -304,8 +309,7 @@ iframe {
     background: 0;
 }
 @media (max-width: 600px) {
-    header,
-    section {
+    header, section {
         padding: 1em;
     }
 }
